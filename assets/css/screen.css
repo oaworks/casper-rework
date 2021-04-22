@@ -32,26 +32,29 @@ production stylesheet in assets/built/screen.css
 
 :root {
 
-  /* Colours */
-  --color-darkgrey: hsl(17, 10%, 13%);
-  --color-midgrey: hsl(30, 1.67%, 52.94%);
-  --color-lightgrey: hsl(30, 1.61%, 75.69%);
-  --color-wash: #e5eff5;
-  --color-darkmode: hsl(17, 10%, 13%);
+    /* Colours */
+    --color-green: #a4d037;
+    --color-yellow: #fecd35;
+    --color-red: #f05230;
+    --color-darkgrey: hsl(17, 10%, 13%);
+    --color-midgrey: hsl(30, 1.67%, 52.94%);
+    --color-lightgrey: hsl(30, 1.61%, 75.69%);
+    --color-wash: #e5eff5;
+    --color-darkmode: hsl(17, 10%, 13%);
 
-  /*
-  An accent color is also set by Ghost itself in
-  Ghost Admin > Settings > Brand
+    /*
+    An accent color is also set by Ghost itself in
+    Ghost Admin > Settings > Brand
 
-  --ghost-accent-color: {value};
+    --ghost-accent-color: {value};
 
-  You can use this variale throughout your styles
-   */
+    You can use this variale throughout your styles
+     */
 
-  /* Fonts */
-  --font-sans-serif: 'Inter', sans-serif;
-  --font-serif: 'Wremena', serif;
-  --font-mono: Menlo, Courier, monospace;
+    /* Fonts */
+    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-serif: Georgia, Times, serif;
+    --font-mono: Menlo, Courier, monospace;
 
 }
 
