@@ -18,7 +18,10 @@ into the {body} of the default.hbs template --}}
     {{/if}}
     <h1 class="site-title">
         {{#if @site.logo}}
-            <img class="site-logo" src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" />
+            {{!-- Harded homepage URL because there’s no easy way to include this in the theme --}}
+            <a href="https://oa.works" target="_blank" style="display: block;">
+              <img class="site-logo" src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" />
+            </a>
         {{else}}
             {{@site.title}}
         {{/if}}
