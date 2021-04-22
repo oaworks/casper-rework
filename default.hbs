@@ -9,6 +9,11 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    {{!-- Preload fonts --}}
+    <link rel="preload" href="https://oa.works/fonts/WremenaRegular.woff" as="font" crossorigin>
+    <link rel="preload" href="https://oa.works/fonts/Inter-3.15/Inter-italic.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://oa.works/fonts/Inter-3.15/Inter-roman.ttf" as="font" crossorigin>
+
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
@@ -98,6 +103,10 @@ $(document).ready(function () {
     $(".gh-content").fitVids();
 });
 </script>
+
+{{!-- SimpleAnalytics script --}}
+<noscript><img src="https://sa.oa.works/noscript.gif" alt=""/></noscript>
+<script async defer src="https://sa.oa.works/latest.js"></script>
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
