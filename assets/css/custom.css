@@ -86,7 +86,8 @@ body {
 }
 
 .post-card-byline-content {
-  color: var(--color-midgrey);
+    margin-left: 10px;
+    color: var(--color-midgrey);
 }
 
 /* Tables */
