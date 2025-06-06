@@ -35,13 +35,19 @@ production stylesheet in assets/built/screen.css
     --color-green: #a4d037;
     --color-yellow: #fecd35;
     --color-red: #f05230;
-    --color-darkgrey: #15171A;
-    --color-midgrey: #738a94;
-    --color-lightgrey: #f1f1f1;
     --color-secondary-text: #979797;
     --color-border: #e1e1e1;
-    --color-wash: #e5eff5;
-    --color-darkmode: #151719;
+
+    /* OA.Works palette */
+    --color-darkmode: hsl(17, 10%, 13%);
+    --color-darkgrey: hsl(17, 10%, 13%);
+    --color-midgrey:  hsl(30, 1.67%, 52.94%);
+    --color-lightgrey:hsl(30, 1.61%, 75.69%);
+    --color-secondary-text: hsl(30, 1.67%, 52.94%);
+    --color-border: hsl(30, 1.61%, 75.69%);
+
+    /* Casper default */
+    --color-wash:     #e5eff5;
 
     /*
     An accent color is also set by Ghost itself in

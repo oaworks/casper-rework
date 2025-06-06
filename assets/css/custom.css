@@ -1,0 +1,174 @@
+/* OA.Works: custom CSS
+/* ------------------------------------------------------------
+
+This file contains all CSS overrides for OA.Works’ blog.
+
+This is the custom CSS file to avoid modifying the original
+Casper stylesheets in case of a major update.
+
+*/
+
+/* 1. Global
+/* ---------------------------------------------------------- */
+
+/* Import CSS reset and base styles */
+@import "global.css";
+
+:root {
+
+  /* Colours */
+  --color-darkgrey: hsl(17, 10%, 13%);
+  --color-midgrey: hsl(30, 1.67%, 52.94%);
+  --color-lightgrey: hsl(30, 1.61%, 75.69%);
+  --color-wash: #e5eff5;
+  --color-darkmode: hsl(17, 10%, 13%);
+
+  /*
+  An accent color is also set by Ghost itself in
+  Ghost Admin > Settings > Brand
+
+  --ghost-accent-color: {value};
+
+  You can use this variale throughout your styles
+   */
+
+  /* Fonts */
+  --font-sans-serif: 'Inter', sans-serif;
+  --font-serif: 'Wremena', serif;
+}
+
+@font-face {
+  font-family: 'Wremena';
+  src: url('/fonts/WremenaRegular.woff') format('woff');
+  unicode-range: U+0020-007F; /* The bare minimum English */
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-3.15/Inter-roman.ttf');
+  unicode-range: U+0020-007F;
+}
+
+@font-face {
+  font-family: 'InterItalic';
+  src: url('/fonts/Inter-3.15/Inter-italic.ttf');
+  unicode-range: U+0020-007F;
+  font-style: italic, oblique;
+}
+
+body {
+    font-family: var(--font-sans-serif);
+}
+
+/* 4. Site Header
+/* ---------------------------------------------------------- */
+
+.site-logo {
+    max-height: 100px;
+}
+
+/* 6. Post Feed
+/* ---------------------------------------------------------- */
+
+.post-feed {
+    grid-gap: 8vmin;
+    padding: 8vmin 0;
+}
+.post-card-title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+}
+
+@media (min-width: 1001px) {
+    .post-card-large {
+        grid-gap: 8vmin;
+    }
+}
+
+.post-card-byline-content {
+    margin-left: 10px;
+    color: var(--color-midgrey);
+}
+
+/* Tables */
+
+.post-full-content table {
+    width: 100%;
+    font-size: 2rem;
+}
+
+.post-full-content table th {
+    line-height: 1.5;
+}
+
+/* 7. Single Post
+/* ---------------------------------------------------------- */
+
+.article-title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+}
+
+.gh-content > blockquote {
+    font-style: normal;
+}
+
+.gh-content > ol,
+.gh-content > ul,
+.gh-content > dl,
+.gh-content > p {
+    font-family: var(--font-sans-serif);
+}
+
+.gh-content a {
+    color: var(--color-darkgrey);
+}
+
+/* 7.4. Read more
+/* ---------------------------------------------------------- */
+
+.read-more-wrap {
+    background-color: var(--color-darkgrey);
+}
+
+.read-more {
+    grid-gap: 8vmin;
+}
+
+
+/* 11. Site Footer
+/* ---------------------------------------------------------- */
+
+.site-footer {
+    background-color: var(--color-darkgrey);
+}
+
+/* Content
+/* ---------------------------------------------------------- */
+
+/* Content refers to styling all page and post content that is
+created within the Ghost editor. The main content handles
+headings, text, images and lists. We deal with cards lower down. */
+
+.post-card-excerpt {
+    color: var(--color-darkgrey);
+}
+
+
+/* 12. Dark Mode
+/* ---------------------------------------------------------- */
+
+/* If you prefer a dark color scheme, you can enable dark mode
+by adding the following code to the Head section of "Code Injection"
+settings inside: Ghost Admin > Settings > Advanced
+
+<script>document.documentElement.classList.add('dark-mode');</script>
+
+Or you can just edit default.hbs and add the .dark-mode class directly
+to the html tag on the very first line of the file.
+
+ */
+
+ html.dark-mode .post-card-excerpt {
+   color: var(--color-lightgrey);
+ }

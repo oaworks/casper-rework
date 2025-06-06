@@ -13,9 +13,15 @@
     <link rel="preload" as="style" href="{{asset "built/screen.css"}}" />
     <link rel="preload" as="script" href="{{asset "built/casper.js"}}" />
 
+    {{!-- Preload fonts --}}
+    <link rel="preload" href="https://oa.works/fonts/WremenaRegular.woff" as="font" crossorigin>
+    <link rel="preload" href="https://oa.works/fonts/Inter-3.15/Inter-italic.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://oa.works/fonts/Inter-3.15/Inter-roman.ttf" as="font" crossorigin>
+
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/custom.css"}}" />
 
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
@@ -68,6 +74,15 @@
                         {{/unless}}
                     </div>
                 {{/unless}}
+                <div class="gh-social">
+                    {{#if @site.facebook}}
+                        <a class="gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                    {{/if}}
+                    {{#if @site.twitter}}
+                        <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                    {{/if}}
+                    <a class="subscribe-button" href="https://oa.works/newsletter/" target="_blank">Subscribe</a>
+                </div>
             </div>
         </div>
     </header>
@@ -84,7 +99,11 @@
             <nav class="site-footer-nav">
                 {{navigation type="secondary"}}
             </nav>
-            <div class="gh-powered-by"><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
+            <div>
+                <p>
+                    This website’s content is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.
+                </p>
+            </div>
         </div>
     </footer>
 
@@ -112,6 +131,10 @@ $(document).ready(function () {
     $(".gh-content").fitVids();
 });
 </script>
+
+{{!-- SimpleAnalytics script --}}
+<noscript><img src="https://sa.blog.oa.works/noscript.gif" alt=""/></noscript>
+<script async defer src="https://sa.blog.oa.works/latest.js"></script>
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}

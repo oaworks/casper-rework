@@ -89,6 +89,12 @@
         },
         "card_assets": true,
         "custom": {
+            "logo_link_url": {
+                "type": "text",
+                "label": "Logo link URL",
+                "description": "Where the header logo points. Leave blank to fall back to the blog home page.",
+                "default": "https://oa.works"
+            },
             "navigation_layout": {
                 "type": "select",
                 "options": [

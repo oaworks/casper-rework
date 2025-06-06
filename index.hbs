@@ -24,7 +24,13 @@ into the {body} of the default.hbs template --}}
         <div class="site-header-inner inner">
             {{#match @custom.navigation_layout "Logo on cover"}}
                 {{#if @site.logo}}
-                    <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
+                    <h1 class="site-title">
+                        {{!-- Add a custom link setting to Ghost via package.json, because it doesn’t allow external URLs to be set easily --}}
+                        {{!-- Add the Ghost URL, site.url, as a fallback --}}
+                        <a href="{{#if @custom.logo_link_url}}{{@custom.logo_link_url}}{{else}}{{@site.url}}{{/if}}" target="_blank" style="display: block;">
+                            <img class="site-logo" src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" />
+                        </a>
+                    </h1>
                 {{else}}
                     <h1 class="site-title">{{@site.title}}</h1>
                 {{/if}}
@@ -41,12 +47,17 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
 <div class="inner posts">
 
-    <div class="post-feed">
-        {{#foreach posts}}
-            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-            {{> "post-card"}}
-        {{/foreach}}
-    </div>
+        <div class="post-feed">
+            {{#foreach posts}}
+                {{!-- exclude #talk posts --}}
+                {{^has tag="#talk"}}
+
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+
+                {{/has}}
+            {{/foreach}}
+        </div>
 
     {{pagination}}
 
