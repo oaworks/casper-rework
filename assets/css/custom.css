@@ -8,7 +8,7 @@ Casper stylesheets in case of a major update.
 
 */
 
-/* 1. Global
+/* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
 
 /* Import CSS reset and base styles */
@@ -60,14 +60,14 @@ body {
     font-family: var(--font-sans-serif);
 }
 
-/* 4. Site Header
+/* 3. Site Header
 /* ---------------------------------------------------------- */
 
 .site-logo {
     max-height: 100px;
 }
 
-/* 6. Post Feed
+/* 5. Post Feed
 /* ---------------------------------------------------------- */
 
 .post-feed {
@@ -90,6 +90,10 @@ body {
     color: var(--color-midgrey);
 }
 
+.post-card-excerpt {
+    color: var(--color-darkgrey);
+}
+
 /* Tables */
 
 .post-full-content table {
@@ -101,7 +105,7 @@ body {
     line-height: 1.5;
 }
 
-/* 7. Single Post
+/* 6. Single Post
 /* ---------------------------------------------------------- */
 
 .article-title {
@@ -124,38 +128,41 @@ body {
     color: var(--color-darkgrey);
 }
 
-/* 7.4. Read more
+/* 6.3. Read more
 /* ---------------------------------------------------------- */
 
 .read-more-wrap {
+    padding-top: 48px;
     background-color: var(--color-darkgrey);
+    color: var(--color-wash);
 }
 
 .read-more {
     grid-gap: 8vmin;
 }
 
+.read-more .post-card-content-link {
+    color: var(--color-wash);
+}
 
-/* 11. Site Footer
+
+/* 10. Site Footer
 /* ---------------------------------------------------------- */
 
 .site-footer {
     background-color: var(--color-darkgrey);
+    margin: 0;
 }
 
-/* Content
-/* ---------------------------------------------------------- */
-
-/* Content refers to styling all page and post content that is
-created within the Ghost editor. The main content handles
-headings, text, images and lists. We deal with cards lower down. */
-
-.post-card-excerpt {
-    color: var(--color-darkgrey);
+.site-footer p {
+    color: var(--color-lightgrey);
 }
 
+.site-footer a {
+    color: var(--color-wash);
+}
 
-/* 12. Dark Mode
+/* 11. Dark Mode
 /* ---------------------------------------------------------- */
 
 /* If you prefer a dark color scheme, you can enable dark mode

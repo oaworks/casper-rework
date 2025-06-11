@@ -64,10 +64,29 @@ which templates loop over to generate a list of posts. --}}
         </a>
 
         <footer class="post-card-meta">
-            <time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
-            {{#if reading_time}}
-                <span class="post-card-meta-length">{{reading_time}}</span>
+            {{#if authors}}
+                <span class="post-card-meta-authors">
+                    <ul class="author-list instapaper_ignore">
+                        {{#foreach authors}}
+                        <li class="author-list-item">
+                            {{#if profile_image}}
+                            <a href="{{url}}" class="author-avatar" aria-label="Read more of {{name}}">
+                                <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                            </a>
+                            {{else}}
+                            <a href="{{url}}" class="author-avatar author-profile-image" aria-label="Read more of {{name}}">{{> "icons/avatar"}}</a>
+                            {{/if}}
+                        </li>
+                        {{/foreach}}
+                    </ul>
+                </span>
             {{/if}}
+            <div class="post-card-meta-tags">
+                <time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+                {{#if reading_time}}
+                    <span class="post-card-meta-length">{{reading_time}}</span>
+                {{/if}}
+            </div>
             {{#if @site.comments_enabled}}
                 {{comment_count}}
             {{/if}}
