@@ -140,6 +140,7 @@ headings, text, images and lists. We deal with cards lower down. */
 .gh-content .kg-toggle-card .kg-toggle-content > ul,
 .gh-content .kg-toggle-card .kg-toggle-content > p {
     font-family: inherit;
+}
 
 /* 6.3. Read more
 /* ---------------------------------------------------------- */
